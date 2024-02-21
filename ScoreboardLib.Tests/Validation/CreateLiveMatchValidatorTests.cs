@@ -1,7 +1,7 @@
 ﻿using ScoreboardLib.Models;
 using ScoreboardLib.Validation;
 
-namespace ScoreboardLib.Tests.Models
+namespace ScoreboardLib.Tests.Validation
 {
     [TestClass]
     public class CreateLiveMatchValidatorTests

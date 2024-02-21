@@ -38,9 +38,11 @@ namespace ScoreboardLib.Tests
             // Arrange
             var match = new LiveMatch();
             Guid id = repository.Insert(match);
+            match.Id = id;
+            match.Score = (1, 0);
 
             // Act
-            bool isUpdated = repository.Update(id, 1, 0);
+            bool isUpdated = repository.Update(match);
 
             // Assert
             Assert.IsTrue(isUpdated);
@@ -50,10 +52,13 @@ namespace ScoreboardLib.Tests
         public void Update_ShouldReturnFalse_WhenMatchNotFound()
         {
             // Arrange
-            Guid id = Guid.NewGuid();
+            var match = new LiveMatch
+            {
+                Id = Guid.NewGuid()
+            };
 
             // Act
-            bool isUpdated = repository.Update(id, 1, 0);
+            bool isUpdated = repository.Update(match);
 
             // Assert
             Assert.IsFalse(isUpdated);

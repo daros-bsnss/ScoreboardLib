@@ -1,6 +1,4 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace ScoreboardLib.Tests
+namespace ScoreboardLib.E2E
 {
     [TestClass]
     public class UnitTest1

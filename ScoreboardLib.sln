@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34322.80
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScoreboardLib", "ScoreboardLib\ScoreboardLib.csproj", "{586CF178-C2FE-4BBD-A430-0510BAD9FD86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreboardLib.Tests", "ScoreboardLib.Tests\ScoreboardLib.Tests.csproj", "{B7EBD918-8462-49CC-BF05-5D0155FB7BEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ScoreboardLib.Tests", "ScoreboardLib.Tests\ScoreboardLib.Tests.csproj", "{B7EBD918-8462-49CC-BF05-5D0155FB7BEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreboardLib.E2E", "ScoreboardLib.E2E\ScoreboardLib.E2E.csproj", "{8A71DEA3-9C59-4A5E-AA74-51D941C0ECBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B7EBD918-8462-49CC-BF05-5D0155FB7BEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7EBD918-8462-49CC-BF05-5D0155FB7BEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7EBD918-8462-49CC-BF05-5D0155FB7BEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A71DEA3-9C59-4A5E-AA74-51D941C0ECBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A71DEA3-9C59-4A5E-AA74-51D941C0ECBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A71DEA3-9C59-4A5E-AA74-51D941C0ECBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A71DEA3-9C59-4A5E-AA74-51D941C0ECBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

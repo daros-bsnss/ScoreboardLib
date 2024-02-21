@@ -1,4 +1,6 @@
-﻿namespace ScoreboardLib.Tests
+﻿using System.Linq;
+
+namespace ScoreboardLib.Tests
 {
     [TestClass]
     public class InMemoryLiveMatchRepositoryTests

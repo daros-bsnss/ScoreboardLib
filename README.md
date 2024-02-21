@@ -23,5 +23,7 @@ AwayTeam - the away team. Simplified to a string.
 Score - score for the current match, simplified to a tuple.
 StartedDateTime - the timestamp when the match has started.
 
-InMemoryLiveMatchRepository - a collection of live matches.
+ILiveMatchRepository - an abstraction for interaction with live matches
+data source.
 
+InMemoryLiveMatchRepository - a sample repository implementation for the collection of live matches.

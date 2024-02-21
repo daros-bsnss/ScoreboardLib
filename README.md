@@ -23,6 +23,12 @@ AwayTeam - the away team. Simplified to a string.
 Score - score for the current match, simplified to a tuple.
 StartedDateTime - the timestamp when the match has started.
 
+CreateLiveMatchValidator - a validation class of FluentValidation AbstractValidator
+that will check all required fields for match creation for validity.
+
+UpdateLiveMatchValidator - adopts validation rules from CreateLiveMatchValidator 
+and checks identifier of the match.
+
 ILiveMatchRepository - an abstraction for interaction with live matches
 data source.
 

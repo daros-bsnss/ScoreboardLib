@@ -1,4 +1,5 @@
 ﻿using ScoreboardLib.Models;
+using ScoreboardLib.Validation;
 
 namespace ScoreboardLib.Tests.Models
 {

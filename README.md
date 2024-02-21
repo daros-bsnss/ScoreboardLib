@@ -13,3 +13,13 @@ team score.
 4. Get a summary of matches in progress ordered by their total score. The matches with the 
 same total score will be returned ordered by the most recently started match in the 
 scoreboard. 
+
+# models
+LiveMatch - main model of the project that represents a blueprint of the live match with 
+the following properties: 
+Id - unique identifier of the live match.
+HomeTeam - the home team. Simplified to a string.
+AwayTeam - the away team. Simplified to a string.
+Score - score for the current match, simplified to a tuple.
+StartedDateTime - the timestamp when the match has started.
+

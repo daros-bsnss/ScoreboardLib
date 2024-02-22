@@ -57,6 +57,7 @@ write a small class for myself in TDD.</i>
 <i>
 I chose MSTest and Moq for writing tests because this is the framework with which I have worked the most. 
 However, I know that NUnit and Fluent Assertions would also be good.
+I kept implementation simple and therefore synchronous, without async methods.
 </i>
 <br>
 <i>

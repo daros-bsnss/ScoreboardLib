@@ -10,6 +10,7 @@ namespace ScoreboardLib.Validation
             RuleFor(m => m.HomeTeam).NotNull().NotEmpty();
             RuleFor(m => m.AwayTeam).NotNull().NotEmpty();
             RuleFor(m => m.Score).Must(s => s.Item1 >= 0).Must(s => s.Item2 >= 0);
+            RuleFor(m => m.StartedDateTime).NotEmpty();
             RuleFor(m => m).Custom((match, context) =>
             {
                 var homeTeam = match.HomeTeam?.Trim().ToLowerInvariant();

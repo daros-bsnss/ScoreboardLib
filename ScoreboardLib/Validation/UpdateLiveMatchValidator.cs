@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using ScoreboardLib.Validation;
-using System;
 
 namespace ScoreboardLib.Models
 {
@@ -8,7 +7,7 @@ namespace ScoreboardLib.Models
     {
         public UpdateLiveMatchValidator() : base()
         {
-            RuleFor(m => m.Id).Must(i => i != Guid.Empty);
+            RuleFor(m => m.Id).NotEmpty();
         }
     }
 }

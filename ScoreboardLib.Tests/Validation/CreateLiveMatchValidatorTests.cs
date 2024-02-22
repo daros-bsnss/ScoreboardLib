@@ -15,7 +15,8 @@ namespace ScoreboardLib.Tests.Validation
             var match = new LiveMatch
             {
                 HomeTeam = "Germany",
-                AwayTeam = "Chroatia"
+                AwayTeam = "Chroatia",
+                StartedDateTime = DateTime.UtcNow
             };
 
             // Act
@@ -91,6 +92,26 @@ namespace ScoreboardLib.Tests.Validation
                 AwayTeam = "Chroatia",
                 Score = (-1, -7),
                 StartedDateTime = DateTime.UtcNow
+            };
+
+            // Act
+            var validationResult = validator.Validate(match);
+
+            // Assert
+            Assert.IsNotNull(validationResult);
+            Assert.IsFalse(validationResult.IsValid);
+        }
+
+        [TestMethod]
+        public void Validate_ShouldFail_WhenStartedDateTimeUnset()
+        {
+            // Arrange
+            var match = new LiveMatch
+            {
+                Id = Guid.NewGuid(),
+                HomeTeam = "Germany",
+                AwayTeam = "Chroatia",
+                Score = (1, 2)
             };
 
             // Act

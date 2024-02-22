@@ -1,4 +1,5 @@
-﻿using Moq;
+﻿using FluentValidation;
+using Moq;
 using ScoreboardLib.Interfaces;
 using ScoreboardLib.Models;
 
@@ -18,7 +19,7 @@ namespace ScoreboardLib.Tests
         }
 
         [TestMethod]
-        public void StartMatch_ShouldCreateAMatchAndInsert()
+        public void StartMatch_ShouldCreateMatchAndInsert()
         {
             // Arrange
             string homeTeam = "Latvia";
@@ -33,9 +34,21 @@ namespace ScoreboardLib.Tests
 
             // Assert
             Assert.AreEqual(expectedId, result);
-
             liveMatchRepositoryMock.Verify(r =>
                 r.Insert(It.Is<LiveMatch>(m => m.HomeTeam == homeTeam && m.AwayTeam == awayTeam)), Times.Once);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ValidationException))]
+        public void StartMatch_ShouldThrowException_WhenTeamNamesAreEqual()
+        {
+            // Arrange
+            string homeTeam = "LATVIA ";
+            string awayTeam = " latvia";
+
+            // Act
+            // Assert
+            liveScoreboard.StartMatch(homeTeam, awayTeam);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace ScoreboardLib.E2E
 
             // Assert
             Assert.IsNotNull(liveMatchSummary);
-            Assert.AreEqual(0, liveScoreboard.Count());
+            Assert.AreEqual(0, liveMatchSummary.Count());
 
             var liveMatchSummaryArray = liveMatchSummary.ToArray();
             Assert.AreEqual(matchDId, liveMatchSummaryArray[0].Id);
@@ -81,7 +81,7 @@ namespace ScoreboardLib.E2E
 
             // Assert
             Assert.IsNotNull(liveMatchSummary);
-            Assert.AreEqual(2, liveScoreboard.Count());
+            Assert.AreEqual(2, liveMatchSummary.Count());
             Assert.IsFalse(liveMatchSummary.Any(m => m.Id == matchAId_ToFinish));
             Assert.IsFalse(liveMatchSummary.Any(m => m.Id == matchBId_ToFinish));
             Assert.IsFalse(liveMatchSummary.Any(m => m.Id == matchDId_ToFinish));

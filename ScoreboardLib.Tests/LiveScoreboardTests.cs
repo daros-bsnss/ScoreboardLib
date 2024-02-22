@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using Moq;
+using ScoreboardLib.Exceptions;
 using ScoreboardLib.Interfaces;
 using ScoreboardLib.Models;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ namespace ScoreboardLib.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(LiveMatchAlreadyStrtedException))]
+        [ExpectedException(typeof(LiveMatchAlreadyStartedException))]
         public void StartMatch_ShouldThrowException_WhenMatchWithTheSameTeamStarted()
         {
             // Arrange
@@ -261,9 +262,9 @@ namespace ScoreboardLib.Tests
             Assert.AreEqual(3, matches.Count());
 
             var matchesArray = matches.ToArray();
-            Assert.AreEqual(matchC.Id, matches[0].Id);
-            Assert.AreEqual(matchB.Id, matches[1].Id);
-            Assert.AreEqual(matchA.Id, matches[2].Id);
+            Assert.AreEqual(matchC.Id, matchesArray[0].Id);
+            Assert.AreEqual(matchB.Id, matchesArray[1].Id);
+            Assert.AreEqual(matchA.Id, matchesArray[2].Id);
         }
 
         [TestMethod]
@@ -305,9 +306,9 @@ namespace ScoreboardLib.Tests
             Assert.AreEqual(3, matches.Count());
 
             var matchesArray = matches.ToArray();
-            Assert.AreEqual(matchA.Id, matches[2].Id);
-            Assert.AreEqual(matchB.Id, matches[0].Id);
-            Assert.AreEqual(matchC.Id, matches[1].Id);
+            Assert.AreEqual(matchA.Id, matchesArray[2].Id);
+            Assert.AreEqual(matchB.Id, matchesArray[0].Id);
+            Assert.AreEqual(matchC.Id, matchesArray[1].Id);
         }
     }
 }

@@ -85,7 +85,8 @@ namespace ScoreboardLib.Tests
             {
                 Id = matchId,
                 HomeTeam = homeTeam,
-                AwayTeam = awayTeam
+                AwayTeam = awayTeam,
+                StartedDateTime = DateTime.UtcNow
             };
 
             liveMatchRepositoryMock.Setup(r => r.GetAll())
@@ -229,7 +230,7 @@ namespace ScoreboardLib.Tests
                 Id = Guid.NewGuid(),
                 HomeTeam = "Mexico",
                 AwayTeam = "Canada",
-                Score = (1, 3),
+                Score = (1, 1),
                 StartedDateTime = startedDate
             };
             var matchB = new LiveMatch
@@ -245,7 +246,7 @@ namespace ScoreboardLib.Tests
                 Id = Guid.NewGuid(),
                 HomeTeam = "Germany",
                 AwayTeam = "Italy",
-                Score = (1, 1),
+                Score = (1, 3),
                 StartedDateTime = startedDate
             };
 
@@ -276,14 +277,14 @@ namespace ScoreboardLib.Tests
                 Id = Guid.NewGuid(),
                 HomeTeam = "Mexico",
                 AwayTeam = "Canada",
-                StartedDateTime = DateTime.UtcNow
+                StartedDateTime = DateTime.UtcNow.AddMinutes(-10)
             };
             var matchB = new LiveMatch
             {
                 Id = Guid.NewGuid(),
                 HomeTeam = "Spain",
                 AwayTeam = "Brazil",
-                StartedDateTime = DateTime.UtcNow.AddMinutes(-10)
+                StartedDateTime = DateTime.UtcNow
             };
             var matchC = new LiveMatch
             {
@@ -306,9 +307,9 @@ namespace ScoreboardLib.Tests
             Assert.AreEqual(3, matches.Count());
 
             var matchesArray = matches.ToArray();
-            Assert.AreEqual(matchA.Id, matchesArray[2].Id);
             Assert.AreEqual(matchB.Id, matchesArray[0].Id);
             Assert.AreEqual(matchC.Id, matchesArray[1].Id);
+            Assert.AreEqual(matchA.Id, matchesArray[2].Id);
         }
     }
 }

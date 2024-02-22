@@ -36,7 +36,7 @@ namespace ScoreboardLib.E2E
 
             // Assert
             Assert.IsNotNull(liveMatchSummary);
-            Assert.AreEqual(0, liveMatchSummary.Count());
+            Assert.AreEqual(5, liveMatchSummary.Count());
 
             var liveMatchSummaryArray = liveMatchSummary.ToArray();
             Assert.AreEqual(matchDId, liveMatchSummaryArray[0].Id);

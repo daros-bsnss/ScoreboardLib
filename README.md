@@ -45,7 +45,10 @@ UpdateMatchScore - updates a new match <br>
 FinishMatch - finishes a new match <br>
 GetSummary - returns ordered live match list. <br>
 <br>
-# author comments
+# coverage
+![image](https://github.com/daros-bsnss/ScoreboardLib/assets/160322800/763a3aa6-7114-4822-936e-18ecad8f480e)
+
+# author's comments
 <i>
 This is the first time I had to work with a TDD approach. 
 Before coding a test task, I studied the subject area and tried to 
@@ -58,5 +61,5 @@ However, I know that NUnit and Fluent Assertions would also be good.
 <br>
 <i>
 In total, together with preliminary preparation and writing this code, I spent ~ 8 hours.
-The experience was very interesting and at first it was difficult 
+The experience was very interesting and at first, it was difficult 
 to twist my brain to write a test using methods that do not yet exist</i>
